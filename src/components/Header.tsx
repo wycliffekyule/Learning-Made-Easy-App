@@ -30,6 +30,10 @@ const Header: React.FC = () => {
           </span>
         </div>
         
+        <div className="text-xs text-gray-500 hidden lg:block">
+          Press <kbd className="px-1 py-0.5 bg-gray-100 rounded text-xs">Alt + ?</kbd> for shortcuts
+        </div>
+        
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

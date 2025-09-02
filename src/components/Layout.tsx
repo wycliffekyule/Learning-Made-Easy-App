@@ -2,13 +2,21 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import KeyboardShortcuts from './KeyboardShortcuts';
 import { useAuth } from '../contexts/AuthContext';
+import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 
 const Layout: React.FC = () => {
   const { user } = useAuth();
+  useKeyboardNavigation();
 
   if (!user) {
-    return <Outlet />;
+    return (
+      <>
+        <Outlet />
+        <KeyboardShortcuts />
+      </>
+    );
   }
 
   return (
@@ -20,6 +28,7 @@ const Layout: React.FC = () => {
           <Outlet />
         </main>
       </div>
+      <KeyboardShortcuts />
     </div>
   );
 };

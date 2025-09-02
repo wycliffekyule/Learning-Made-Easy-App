@@ -3,8 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { BookOpen, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 
 const Login: React.FC = () => {
+  useKeyboardNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);

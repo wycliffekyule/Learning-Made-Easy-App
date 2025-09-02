@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Users, Award, Target, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 
 const Home: React.FC = () => {
+  useKeyboardNavigation();
+  
   const features = [
     {
       icon: Target,
